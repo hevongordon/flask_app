@@ -26,7 +26,7 @@ def home():
 
 @app.route('/profile')
 def profile():
-  return render_template('profile.html',time=timeinfo())
+  return render_template('profile.html')
 
 
 @app.route('/about/')
@@ -58,9 +58,10 @@ def add_header(response):
 
 
 
-def timeinfo():
+def timer():
      now = time.strftime("%c")
-     return now
+     return render_template("profile.html",time=now)
+    
 
 
 @app.errorhandler(404)
